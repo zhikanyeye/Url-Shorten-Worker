@@ -7,7 +7,7 @@ const config = {
   overwrite_kv: false, // Allow user to overwrite an existed key.
   snapchat_mode: false, // The link will be distroyed after access.
   visit_count: false, // Count visit times.
-  load_kv: false, // Load all from Cloudflare KV
+  load_kv: true, // Load all from Cloudflare KV
   system_type: "shorturl", // shorturl, imghost, other types {pastebin, journal}
 }
 
@@ -294,7 +294,7 @@ async function handleRequest(request) {
   // 如果path为空, 即直接访问本worker
   // If visit this worker directly (no path)
   if (!path) {
-    return Response.redirect("https://zelikk.blogspot.com/search/label/Url-Shorten-Worker", 302)
+    return Response.redirect("https://www.zhiqing.cloudns.ch/")
     /* new Response(html404, {
       headers: response_header,
       status: 404
